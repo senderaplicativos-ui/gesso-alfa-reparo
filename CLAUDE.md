@@ -15,8 +15,8 @@ rtk git push -u origin main
 ## Dados do cliente (não alterar sem pedido)
 
 - Nome: Gesso Alfa Reparos Goiânia
-- Endereço: Alameda Ricardo Paranhos, 136 - St. Marista, Goiânia - GO, 74180-050
-- Telefone / WhatsApp: (62) 99950-7538 → `+5562999507538`
+- Endereço: Avenida Anhanguera, Quadra F, Lote 0, Nº 6315 - Setor Oeste, Goiânia - GO, 74110-010
+- Telefone / WhatsApp: (62) 99192-8903 → `+5562991928903`
 - Horário: Seg–Sex 07h–18h, Sáb 08h–12h
 - Domínio previsto: gessoalfareparos.com.br
 

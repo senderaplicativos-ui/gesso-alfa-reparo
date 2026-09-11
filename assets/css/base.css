@@ -11,6 +11,10 @@
   --navy-600: #1a4490;
   --navy-500: #2358b4;
 
+  /* Fundo do logo (faixa do cabeçalho) */
+  --logo-blue: #16296d;
+  --logo-blue-strong: #142460;
+
   --red-700: #9e0c23;
   --red-600: #c8102e;
   --red-500: #e01f35;
@@ -297,14 +301,14 @@ strong { font-weight: 700; color: var(--navy-800); }
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  background: rgba(7, 22, 52, 0.82);
+  background: rgba(22, 41, 109, 0.92);
   backdrop-filter: blur(14px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
               padding 0.3s var(--ease);
 }
 .header.is-stuck {
-  background: rgba(7, 22, 52, 0.97);
+  background: rgba(20, 36, 96, 0.98);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -486,6 +490,7 @@ strong { font-weight: 700; color: var(--navy-800); }
   align-items: center;
 }
 
+
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -544,6 +549,30 @@ strong { font-weight: 700; color: var(--navy-800); }
   color: var(--silver-200);
 }
 .hero__trust svg { width: 1.15rem; height: 1.15rem; color: var(--red-400); flex-shrink: 0; }
+
+/* Coluna lateral do hero (frase + card) */
+.hero__aside { display: block; }
+
+.hero__card-hd {
+  margin: 0 0 1rem;
+  font-family: var(--font-head, inherit);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
+}
+.hero__card-hd::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  margin: 0.625rem auto 0;
+  background: var(--grad-red, var(--red-500));
+  border-radius: 999px;
+}
 
 /* Card lateral do hero */
 .hero__card {
