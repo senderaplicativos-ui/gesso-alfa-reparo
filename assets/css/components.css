@@ -38,6 +38,22 @@
   height: 5px;
   background: var(--grad-red);
 }
+.intro__aside-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md, 14px);
+}
+.intro__aside-logo img {
+  width: min(220px, 70%);
+  height: auto;
+  border-radius: 10px;
+}
+
 .intro__aside h3 { color: var(--white); margin-bottom: 1rem; }
 
 .intro__aside-list { display: grid; gap: 0.875rem; margin-bottom: 1.75rem; }
@@ -47,6 +63,7 @@
   font-size: 0.9375rem;
   line-height: 1.5;
 }
+.intro__aside-list strong { color: var(--white); }
 .intro__aside-list svg {
   width: 1.25rem; height: 1.25rem;
   color: var(--red-400);
@@ -57,6 +74,68 @@
 @media (max-width: 900px) {
   .intro__grid { grid-template-columns: 1fr; }
   .intro__aside { position: static; }
+}
+
+/* ==========================================================================
+   BLOCO PROBLEMA / TRANSFORMAÇÃO
+   ========================================================================== */
+.problema__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.problema__slideshow {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-lg, 0 24px 60px rgba(7, 22, 52, 0.28));
+}
+.problema__slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.problema__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* casal preocupado fica na base; casal feliz entra e sai em cross-fade */
+.problema__img:nth-child(2) {
+  opacity: 0;
+  animation: problemaFade 9s var(--ease) infinite;
+}
+@keyframes problemaFade {
+  0%, 8%    { opacity: 0; }
+  42%, 58%  { opacity: 1; }
+  92%, 100% { opacity: 0; }
+}
+
+.problema__text > * + * { margin-top: 1.125rem; }
+.problema__text h2 { margin-bottom: 0.5rem; }
+.problema__text p { color: var(--ink-500); font-size: 1.0625rem; }
+.problema__text .btn { margin-top: 1.75rem; }
+
+.eyebrow--red { color: var(--red-600); }
+
+/* variação com fundo suave para separar das seções brancas vizinhas */
+.problema--alt { background: var(--silver-100, #f4f6f9); }
+
+@media (max-width: 900px) {
+  .problema__grid { grid-template-columns: 1fr; }
+  .problema__media { order: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .problema__img:nth-child(2) { animation: none; opacity: 1; }
 }
 
 /* ==========================================================================
